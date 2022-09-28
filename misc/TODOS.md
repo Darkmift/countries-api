@@ -9,7 +9,8 @@
 ## Long Term
 - applying theme colors on toggle (css vars)
 - plan app structure (partially done - no state/fetch yet)
-- research api
+- research api (added thunderclient collection - regions:  
+    {Africa, Americas, Asia, Europe, Oceania})
 - select state mangement tool (zustand?)
 - select query api tool (react query maybe?)
 - indexedDB to cache (localbase)
