@@ -1,0 +1,25 @@
+// https://fonts.google.com/specimen/Nunito+Sans
+
+//400
+@font-face {
+  font-family: nunito-sans-regular;
+  src: url(./Nunito_Sans/);
+}
+
+//300
+@font-face {
+  font-family: nunito-semi-light;
+  src: url(./Nunito_Sans/NunitoSans-Light.ttf);
+}
+
+//600
+@font-face {
+  font-family: nunito-sans-semi-bold;
+  src: url(./Nunito_Sans/NunitoSans-SemiBold.ttf);
+}
+
+//800
+@font-face {
+  font-family: nunito-sans-extra-bold;
+  src: url(./Nunito_Sans/NunitoSans-ExtraBold.ttf);
+}

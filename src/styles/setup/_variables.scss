@@ -1,0 +1,39 @@
+@import '../fonts/fonts';
+
+$mainFont300: nunito-sans-light;
+$mainFont400: nunito-sans-regular;
+$mainFont600: nunito-sans-semi-bold;
+$mainFont800: nunito-sans-extra-bold;
+
+//light
+$bgWhite: hsl(0, 0%, 100%);
+$bgVeryLightGrey: hsl(0, 0%, 95%);
+$bgDarkGrey: hsl(0, 0%, 52%);
+
+//dark
+$bgVeryDarkBlue: hsl(207, 26%, 17%);
+$bgDarkBlue: hsl(209, 23%, 22%);
+
+//fontsize-desktop
+/*details title*/
+$fontSizeDesktopXXL: 32px;
+/*main title*/
+$fontSizeDesktopXL: 24px;
+/*card title*/
+$fontSizeDesktopL: 18px;
+/*toggle dark mode/back button*/
+$fontSizeDesktopM: 16px;
+/*text font size*/
+$fontSizeDesktopS: 14px;
+
+//fontsize-mobile
+/*details title*/
+$fontSizeDesktopXXL: 22px;
+/*main title*/
+$fontSizeDesktopXL: 18px;
+/*card title*/
+$fontSizeDesktopL: 14px;
+/*toggle dark mode/back button*/
+$fontSizeDesktopM: 12px;
+/*text font size*/
+$fontSizeDesktopS: 12px;
