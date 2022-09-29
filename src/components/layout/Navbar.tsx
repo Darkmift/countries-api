@@ -9,11 +9,12 @@ type Props = {
 }
 
 const Navbar = ({ isDarkMode, setIsDarkMode }: Props) => {
+
   return (
     <nav className={scssModule['nav-bar']}>
       <h1>Where in the world?</h1>
 
-      <div>
+      <div className="dark-mode-toggle-wrapper" onClick={() => setIsDarkMode(!isDarkMode)}>
         <img src={isDarkMode ? crescent_dark : crescent_light} alt="SVG logo image" />
         {/*8px*/}
         <p>{isDarkMode ? 'Light' : 'Dark'} Mode</p>

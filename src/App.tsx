@@ -12,13 +12,12 @@ function App() {
   const setSearchTerm = useCountryStore(s => s.setSearchTerm);
 
   const searchTermHandler = (evt: Types.InputEvent) => {
-    console.log("🚀 ~ file: App.tsx ~ line 11 ~ searchTermHandler ~ evt", evt)
     const term = evt.target.value.toLowerCase();
     setSearchTerm(term)
   }
 
   return (
-    <div className="App">
+    <div className={"app" + (isDarkMode ? ' dark-mode' : '')}>
       <Navbar
         isDarkMode={isDarkMode}
         setIsDarkMode={setIsDarkMode}
