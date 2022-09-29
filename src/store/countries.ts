@@ -9,6 +9,7 @@ type State = {
   selectedRegionName: string;
   selectedCountriesByRegion: Country[];
   setSearchTerm: (term: string) => void;
+  setCountries: (countries: Country[]) => void;
 };
 
 const _setSearchTerm = (set: Function, term: string) => set({ searchCountryTerm: term });
