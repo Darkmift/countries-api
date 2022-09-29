@@ -1,0 +1,8 @@
+@import '../../styles/styles.scss';
+
+.nav-bar :global {
+  background-color: var(--background-color-nav);
+  h1 {
+    font-size: $fontSizeDesktopXL;
+  }
+}
