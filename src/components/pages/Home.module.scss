@@ -1,3 +1,29 @@
+@import '../../styles/styles.scss';
+
 .home :global {
   padding: 48px 80px;
+}
+
+.search-bar :global {
+  display: flex;
+  align-items: center;
+  width: 480px;
+  height: 56px;
+  background-color: var(--background-color-nav);
+
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+  border-radius: 5px;
+
+  img {
+    margin-left: 32px;
+    height: 19px;
+  }
+  input {
+    background-color: transparent;
+    margin-left: 24px;
+    width: 395px;
+    border: none;
+    outline: none;
+    font-size: $fontSizeDesktopL;
+  }
 }

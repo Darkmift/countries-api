@@ -1,11 +1,16 @@
 import scssModule from './Home.module.scss';
 import useCountryStore from '../../store/countries';
+import useThemeStore from '../../store/theme';
 import Types from '../../type';
 
-const Home = () => {
+//svg
+import magnifyLight from '../../assets/magnify-gray.svg';
+import magnifyDark from '../../assets/magnify-white.svg';
 
+const SearchBar = () => {
   const searchTerm = useCountryStore(s => s.searchCountryTerm);
   const setSearchTerm = useCountryStore(s => s.setSearchTerm);
+  const isDarkMode = useThemeStore(s => s.isDarkMode);
 
   const searchTermHandler = (evt: Types.InputEvent) => {
     const term = evt.target.value.toLowerCase();
@@ -13,13 +18,23 @@ const Home = () => {
   }
 
   return (
-    <div className={scssModule['home']}>
+    <div className={scssModule['search-bar']}>
+      <img src={isDarkMode ? magnifyDark : magnifyLight} alt="SVG logo image" />
+
       <input
         type="text"
-        placeholder="enter term"
+        placeholder="Search for a country..."
         value={searchTerm}
         onChange={searchTermHandler} />
-      <p>{searchTerm.length > 3 ? searchTerm : 'Input a Country name'}</p>
+    </div>
+  )
+}
+
+const Home = () => {
+
+  return (
+    <div className={scssModule['home']}>
+      <SearchBar />
     </div>
   )
 }
