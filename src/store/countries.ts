@@ -11,9 +11,8 @@ type State = {
   setSearchTerm: (term: string) => void;
 };
 
-//  setLastName: (lastName) => set({ lastName }),
-
 const _setSearchTerm = (set: Function, term: string) => set({ searchCountryTerm: term });
+const _setCountries = (set: Function, countries: Country[]) => set({ allCountries: countries });
 
 export default create<State>((set) => ({
   allCountries: [],
@@ -22,4 +21,5 @@ export default create<State>((set) => ({
   selectedRegionName: '',
   selectedCountriesByRegion: [],
   setSearchTerm: (term: string) => _setSearchTerm(set, term),
+  setCountries: (countries: Country[]) => _setCountries(set, countries),
 }));
