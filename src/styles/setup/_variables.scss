@@ -1,4 +1,4 @@
-@import '../fonts/fonts';
+@import './fonts';
 
 //light
 $bgWhite: hsl(0, 0%, 100%);
@@ -32,3 +32,7 @@ $fontSizeDesktopL: 14px;
 $fontSizeDesktopM: 12px;
 /*text font size*/
 $fontSizeDesktopS: 12px;
+
+//font-color
+$lightModeFontColor: hsla(200, 15%, 8%, 1);
+$darkModeFontColor: hsla(0, 0%, 100%, 1);
