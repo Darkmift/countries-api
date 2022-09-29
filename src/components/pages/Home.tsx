@@ -1,3 +1,4 @@
+import scssModule from './Home.module.scss';
 import useCountryStore from '../../store/countries';
 import Types from '../../type';
 
@@ -12,7 +13,7 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <div className={scssModule['home']}>
       <input
         type="text"
         placeholder="enter term"
