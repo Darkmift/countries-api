@@ -1,0 +1,33 @@
+@import './setup/variables';
+
+:root {
+  --background-color-nav: #{$bgWhite};
+  --background-color: #{$bgVeryLightGrey};
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $mainFont400;
+}
+
+body {
+  margin: 0;
+  font-size: $fontSizeDesktopM;
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-color);
+}
+
+.app {
+  &.dark-mode {
+    --background-color-nav: $bgVeryDarkBlue;
+    --background-color: $bgDarkBlue;
+  }
+}

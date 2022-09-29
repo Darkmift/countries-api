@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import './App.scss'
+import Navbar from './components/layout/Navbar';
 import useCountryStore from './store/countries';
 import Types from './type';
 
 function App() {
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const searchTerm = useCountryStore(s => s.searchCountryTerm);
   const setSearchTerm = useCountryStore(s => s.setSearchTerm);
@@ -15,6 +19,10 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
+      />
       <input
         type="text"
         placeholder="enter term"
