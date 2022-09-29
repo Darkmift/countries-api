@@ -3,6 +3,7 @@
 :root {
   --background-color-nav: #{$bgWhite};
   --background-color: #{$bgVeryLightGrey};
+  --font-color: #{$lightModeFontColor};
 }
 
 ::-webkit-scrollbar {
@@ -11,23 +12,28 @@
 
 * {
   box-sizing: border-box;
-}
-
-html {
   font-family: $mainFont400;
+  font-size: $fontSizeDesktopM;
+  color: var(--font-color);
 }
 
-body {
-  margin: 0;
-  font-size: $fontSizeDesktopM;
-  padding: 0;
-  margin: 0;
+#root {
   background-color: var(--background-color);
 }
 
+html,
+body {
+  margin: 0;
+  height: 100%;
+  padding: 0;
+}
+
 .app {
+  min-height: 100vh;
+  background-color: var(--background-color);
   &.dark-mode {
-    --background-color-nav: $bgVeryDarkBlue;
-    --background-color: $bgDarkBlue;
+    --background-color-nav: #{$bgVeryDarkBlue};
+    --background-color: #{$bgDarkBlue};
+    --font-color: #{$darkModeFontColor};
   }
 }
