@@ -34,3 +34,5 @@ export type Country = {
   cca3: String; //the contry code -- will be used to refrence from borders
   mappedBorders?: Country[]; // will be hydrated
 };
+
+export type RefType = React.RefObject<HTMLElement> | React.MutableRefObject<undefined>;
