@@ -1,0 +1,9 @@
+@import '../../../styles/styles.scss';
+
+.home :global {
+  padding: 48px 80px;
+  .controls {
+    display: flex;
+    justify-content: space-between;
+  }
+}
