@@ -36,3 +36,10 @@ $fontSizeDesktopS: 12px;
 //font-color
 $lightModeFontColor: hsla(200, 15%, 8%, 1);
 $darkModeFontColor: hsla(0, 0%, 100%, 1);
+
+@mixin box-mixin {
+  background-color: var(--background-color-nav);
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+  border-radius: 5px;
+  padding: 0px;
+}
