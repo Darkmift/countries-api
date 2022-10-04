@@ -43,9 +43,9 @@ type RegionDropDownProps = {}
 const RegionDropDown = (props: RegionDropDownProps) => {
 
 
-  const buttonRef = React.createRef<HTMLButtonElement>();
+  const ref = React.createRef<HTMLDivElement>();
   const [isOptionsOpen, setOptionsOpen] = useState(false);
-  useOnClickOutside(buttonRef, () => setOptionsOpen(false));
+  useOnClickOutside(ref, () => setOptionsOpen(false));
 
   const regionClickHandler = (name: string) => {
     setOptionsOpen(v => {
@@ -60,9 +60,8 @@ const RegionDropDown = (props: RegionDropDownProps) => {
   const toggleOpenSvgDark = isOptionsOpen ? dropDownCloseDark : dropDownOpenDark;
 
   return (
-    <div className={scssModule["region-drop-down"]}>
+    <div className={scssModule["region-drop-down"]} ref={ref}>
       <button
-        ref={buttonRef}
         className="button-wrapper"
         onClick={() => setOptionsOpen(v => !v)}
       >
