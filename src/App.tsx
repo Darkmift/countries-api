@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './App.scss'
 import Navbar from './components/layout/Navbar';
 import useThemeStore from './store/theme';
