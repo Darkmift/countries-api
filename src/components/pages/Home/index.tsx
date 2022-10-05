@@ -1,9 +1,7 @@
 import scssModule from './Home.module.scss';
 import SearchBar from './SearchBar';
-
-//svg
 import RegionDropDown from './RegionDropDown';
-
+import Flags from './Flags';
 
 const Home = () => {
 
@@ -13,6 +11,7 @@ const Home = () => {
         <SearchBar />
         <RegionDropDown />
       </div>
+      <Flags />
     </div>
   )
 }
