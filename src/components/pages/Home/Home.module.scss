@@ -1,7 +1,9 @@
 @import '../../../styles/styles.scss';
 
 .home :global {
+  margin: auto;
   padding: 48px 80px;
+  max-width: $flagContainer;
   .controls {
     display: flex;
     justify-content: space-between;
