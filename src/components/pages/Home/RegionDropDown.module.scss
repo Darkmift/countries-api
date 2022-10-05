@@ -1,6 +1,7 @@
 @import '../../../styles/styles.scss';
 
 .region-drop-down :global {
+  position: relative;
   .button-wrapper {
     @include box-mixin;
     border: none;
@@ -20,6 +21,7 @@
   }
 
   .region-select {
+    position: absolute;
     @include box-mixin;
     margin-top: 4px;
     width: 200px;
