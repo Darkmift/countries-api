@@ -7,31 +7,31 @@ export type GetCountriesResponse = {
 
 export type Country = {
   name: {
-    common: String;
+    common: string;
     nativeName: {
       [key: string]: {
-        common: String;
+        common: string;
       };
     };
   };
-  region: String;
-  subregion: String;
-  capital: String[]; //fetch first
+  region: string;
+  subregion: string;
+  capital: string[]; //fetch first
   flags: {
-    png: String;
-    svg: String;
+    png: string;
+    svg: string;
   };
   population: Number;
   currencies: {
     [key: string]: {
-      name: String;
+      name: string;
     };
   };
   languages: {
-    [key: string]: String;
+    [key: string]: string;
   };
-  borders: String[]; // list of nations by cca3 code
-  cca3: String; //the contry code -- will be used to refrence from borders
+  borders?: string[]; // list of nations by cca3 code
+  cca3: string; //the contry code -- will be used to refrence from borders
   mappedBorders?: Country[]; // will be hydrated
 };
 
