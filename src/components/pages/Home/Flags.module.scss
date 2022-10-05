@@ -1,0 +1,40 @@
+@import '../../../styles/styles';
+
+.flag-card :global {
+  display: flex;
+  flex-direction: column;
+  @include box-mixin;
+  width: 264px;
+  height: 336px;
+  margin-bottom: 75px;
+
+  overflow: hidden;
+  img {
+    flex: 0 0 auto;
+    object-fit: cover;
+    height: 160px;
+  }
+  .details-wrapper {
+    padding: 24px;
+    .card-title {
+      margin: 0;
+      font-size: $fontSizeDesktopXL;
+      font-family: $mainFont800;
+    }
+    .stats {
+      margin-top: 16px;
+      font-family: $mainFont600;
+      p {
+        margin-top: 0;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+.flags {
+  margin-top: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
