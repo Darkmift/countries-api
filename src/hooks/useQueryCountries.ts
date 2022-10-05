@@ -10,7 +10,7 @@ export const useQueryCountries = (
   onSuccess: (data: GetCountriesResponse) => void,
   onError: (error: AxiosError) => void
 ) => {
-  return useQuery('super-heroes', fetchCountries, {
+  return useQuery('coutnries-all', fetchCountries, {
     onSuccess,
     onError,
   });
