@@ -12,15 +12,29 @@ type State = {
   setCountries: (countries: Country[]) => void;
 };
 
-const _setCountryList = (countries: Country[], regionName: string): Country[] => {
-  return regionName ? countries.filter((c: Country) => c.region.includes(regionName)) : countries;
+const _setCountryList = (countryList: Country[], regionName: string, term = ''): Country[] => {
+  return regionName
+    ? countryList.filter(
+        (c: Country) =>
+          c.name.common.toLowerCase().includes(term.toLowerCase()) &&
+          c.region.includes(regionName)
+      )
+    : countryList;
 };
 
-const _setSearchTerm = (set: Function, term: string) => set({ searchCountryTerm: term });
+const _setSearchTerm = (set: Function, term: string) => {
+  set((s: State) => {
+    const selectedCountryList = _setCountryList(s.allCountries, s.selectedRegionName, term);
+    return {
+      searchCountryTerm: term,
+      selectedCountriesByRegion: selectedCountryList,
+    };
+  });
+};
 const _setCountries = (set: Function, countries: Country[]) => {
   set((s: State) => {
     const regionName = s.selectedRegionName;
-    const selectedCountryList = _setCountryList(countries, regionName);
+    const selectedCountryList = _setCountryList(countries, regionName, s.searchCountryTerm);
     return {
       allCountries: countries,
       selectedCountriesByRegion: selectedCountryList,
@@ -29,7 +43,7 @@ const _setCountries = (set: Function, countries: Country[]) => {
 };
 const _setSelectedRegionName = (set: Function, regionName: string) => {
   set((s: State) => {
-    const selectedCountryList = _setCountryList(s.allCountries, regionName);
+    const selectedCountryList = _setCountryList(s.allCountries, regionName, s.searchCountryTerm);
 
     return {
       selectedRegionName: regionName,
