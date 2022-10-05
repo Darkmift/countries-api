@@ -8,6 +8,7 @@ import dropDownOpenDark from '../../../assets/dropdown-open-dark.svg';
 import dropDownCloseLight from '../../../assets/dropdown-close-light.svg';
 import dropDownOpenLight from '../../../assets/dropdown-open-light.svg';
 import { useOnClickOutside } from '../../../hooks/useonClickOutside';
+import useCountryStore from '../../../store/countries';
 
 type RegionOptionsProps = {
   isOptionsOpen: boolean,
@@ -42,16 +43,17 @@ const RegionOptions = ({
 type RegionDropDownProps = {}
 const RegionDropDown = (props: RegionDropDownProps) => {
 
-
+  const setSelectedRegionName = useCountryStore(s => s.setSelectedRegionName)
+  const selectedRegionName = useCountryStore(s => s.selectedRegionName)
   const ref = React.createRef<HTMLDivElement>();
   const [isOptionsOpen, setOptionsOpen] = useState(false);
   useOnClickOutside(ref, () => setOptionsOpen(false));
 
   const regionClickHandler = (name: string) => {
     setOptionsOpen(v => {
-      console.log("🚀 ~ file: RegionDropDown.tsx ~ line 27 ~ regionClickHandler ~ name", name)
       return false;
     })
+    setSelectedRegionName(name)
   }
 
   //logic for svg display
@@ -65,7 +67,7 @@ const RegionDropDown = (props: RegionDropDownProps) => {
         className="button-wrapper"
         onClick={() => setOptionsOpen(v => !v)}
       >
-        <div>Filter By Region</div>
+        <div>{selectedRegionName?.length ? selectedRegionName : 'Filter By Region'}</div>
         <img src={isDarkMode ? toggleOpenSvgDark : toggleOpenSvgLight} alt="SVG logo image" />
       </button>
       <RegionOptions

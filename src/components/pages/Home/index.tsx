@@ -9,6 +9,7 @@ import { Country } from '../../../type';
 const Home = () => {
 
   const allCountries = useCountryStore(s => s.allCountries)
+  const selectedCountriesByRegion = useCountryStore(s => s.selectedCountriesByRegion)
   const setCountries = useCountryStore(s => s.setCountries)
 
   const onSuccess = (data: any) => {
@@ -34,7 +35,7 @@ const Home = () => {
 
       {isLoading && <h2>Loading...</h2>}
       {isError && <h2>{error?.message || 'Error fetching...'}</h2>}
-      {isLoading || isError || allCountries?.length < 1 ? '' : <Flags selectedCountries={allCountries as Country[]} />}
+      {isLoading || isError || allCountries?.length < 1 ? '' : <Flags selectedCountries={selectedCountriesByRegion as Country[]} />}
 
     </div>
   )
