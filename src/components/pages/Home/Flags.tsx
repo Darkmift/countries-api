@@ -1,6 +1,5 @@
 import { Country } from '../../../type'
 import scssModule from './Flags.module.scss'
-import MockCountryJson from '../../../assets/mockCountry.json'
 
 type FlagCardProps = {
   country?: Country
@@ -24,14 +23,14 @@ const FlagCard = ({ country }: FlagCardProps) => {
   )
 }
 
+type FlagsProps = {
+  selectedCountries: Country[]
+}
 
-type FlagsProps = {}
-const Flags = (props: FlagsProps) => {
-  const flagArr = [...Array(8).keys()]
-
+const Flags = ({ selectedCountries }: FlagsProps) => {
   return (
     <div className={scssModule['flags']}>
-      {flagArr.map((n, i) => <FlagCard key={i} country={MockCountryJson} />)}
+      {selectedCountries.map((country, i) => <FlagCard key={i} country={country} />)}
     </div>
   )
 }
