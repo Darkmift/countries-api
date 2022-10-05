@@ -12,14 +12,15 @@ type State = {
   setCountries: (countries: Country[]) => void;
 };
 
+const _setCountryList = (countries: Country[], regionName: string): Country[] => {
+  return regionName ? countries.filter((c: Country) => c.region.includes(regionName)) : countries;
+};
+
 const _setSearchTerm = (set: Function, term: string) => set({ searchCountryTerm: term });
 const _setCountries = (set: Function, countries: Country[]) => {
   set((s: State) => {
     const regionName = s.selectedRegionName;
-    const selectedCountryList = regionName
-      ? countries.filter((c: Country) => c.region.includes(regionName))
-      : countries;
-
+    const selectedCountryList = _setCountryList(countries, regionName);
     return {
       allCountries: countries,
       selectedCountriesByRegion: selectedCountryList,
@@ -28,9 +29,7 @@ const _setCountries = (set: Function, countries: Country[]) => {
 };
 const _setSelectedRegionName = (set: Function, regionName: string) => {
   set((s: State) => {
-    const selectedCountryList = regionName
-      ? s.allCountries.filter((c: Country) => c.region.includes(regionName))
-      : s.allCountries;
+    const selectedCountryList = _setCountryList(s.allCountries, regionName);
 
     return {
       selectedRegionName: regionName,
