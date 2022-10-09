@@ -2,4 +2,72 @@
 
 .country :global {
   @include page-mixin;
+
+  .go-back {
+    @include box-mixin;
+    width: 136px;
+    height: 40px;
+    margin-top: 80px;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .main-wrapper {
+    margin-top: 90px;
+    display: flex;
+    gap: 120px;
+    align-items: center;
+    img {
+      width: 560px;
+      height: 401px;
+      border: 1px solid #ccc;
+    }
+    .stats-wrapper {
+      width: 598px;
+      height: 323px;
+      .country-title {
+        font-family: $mainFont800;
+        font-size: $fontSizeDesktopXXL;
+      }
+      .country-details {
+        margin-top: 23px;
+        display: flex;
+        gap: 141px;
+        .column {
+          div {
+            span {
+              font-family: $mainFont400;
+              font-weight: bold;
+              font-size: $fontSizeDesktopM;
+              line-height: $fontSizeDesktopXXL;
+              &:last-child {
+                font-weight: 100;
+                margin-left: 5px;
+                font-family: $mainFont300;
+              }
+            }
+          }
+        }
+      }
+      .country-neighbours-tags {
+        margin-top: 68px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        .tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5px 0;
+          span {
+            @include box-mixin;
+            margin-right: 10px;
+            padding: 5px 27px;
+          }
+        }
+      }
+    }
+  }
 }
