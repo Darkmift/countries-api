@@ -1,0 +1,5 @@
+@import '../../../styles/styles.scss';
+
+.country :global {
+  @include page-mixin;
+}

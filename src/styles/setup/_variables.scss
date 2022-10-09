@@ -43,5 +43,10 @@ $darkModeFontColor: hsla(0, 0%, 100%, 1);
   border-radius: 5px;
   padding: 0px;
 }
+@mixin page-mixin {
+  margin: auto;
+  padding: 48px 80px;
+  max-width: $flagContainer;
+}
 
 $flagContainer: 1280px;
