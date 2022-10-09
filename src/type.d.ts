@@ -11,9 +11,11 @@ export type Country = {
     nativeName: {
       [key: string]: {
         common: string;
+        official: string;
       };
     };
   };
+  tld: string[];
   region: string;
   subregion: string;
   capital: string[]; //fetch first
@@ -32,7 +34,7 @@ export type Country = {
   };
   borders?: string[]; // list of nations by cca3 code
   cca3: string; //the contry code -- will be used to refrence from borders
-  mappedBorders?: Country[]; // will be hydrated
+  mappedBorders: Country[]; // will be hydrated
 };
 
 export type RefType = React.RefObject<HTMLElement> | React.MutableRefObject<undefined>;
