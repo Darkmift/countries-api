@@ -2,6 +2,7 @@ import { Country } from '../../../type'
 import scssModule from './Flags.module.scss'
 
 import { useNavigate } from "react-router-dom";
+import useCountryStore from "../../../store/countries"
 
 type FlagCardProps = {
   country?: Country
@@ -9,10 +10,15 @@ type FlagCardProps = {
 
 const FlagCard = ({ country }: FlagCardProps) => {
 
+  const selectedCountry = useCountryStore(s => s.selectedCountry);
+  const setSelectedCountry = useCountryStore(s => s.setSelectedCountry);
+
   const navigate = useNavigate();
   //on nav to details page
   const clickHandler = (country: Country) => {
-    navigate('/country', { state: { country } });
+
+    setSelectedCountry(country);
+    navigate('/country', { state: { country: selectedCountry } });
   }
 
   // fail safe(also for ts undefined issues)
