@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "16.13.2"
+  },
   "name": "countries-api-happy-fun-times",
   "private": true,
   "version": "0.0.0",
