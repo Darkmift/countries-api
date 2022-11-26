@@ -12,6 +12,18 @@
   height: 80px;
   padding: 0 80px 0 81px;
 
+  @media (max-width: 450px) {
+    padding: 0 16px;
+    
+    h1 {
+      font-size: $fontSizeDesktopS;
+    }
+
+    .dark-mode-toggle-wrapper {
+      font-size: $fontSizeDesktopM;
+    }
+  }
+
   h1 {
     font-size: $fontSizeDesktopXL;
     font-family: $mainFont800;

@@ -23,7 +23,6 @@
     img {
       width: 560px;
       height: 401px;
-      border: 1px solid #ccc;
     }
     .stats-wrapper {
       width: 598px;
@@ -67,6 +66,69 @@
             padding: 5px 27px;
           }
         }
+      }
+    }
+    padding-bottom: 60px;
+  }
+
+  @media (max-width: 1175px) {
+    gap: 5vw;
+    .main-wrapper {
+      .stats-wrapper {
+        .country-details {
+          gap: 5vw;
+        }
+        .country-neighbours-tags {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1100px) {
+    padding: 28px;
+    .go-back {
+      margin-top: 40px;
+    }
+    .main-wrapper {
+      margin-top: 64px;
+      .stats-wrapper {
+        width: 560px;
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    // padding: 0 !important;
+
+    .main-wrapper {
+      gap: 44px;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 670px) {
+    // padding: 0 !important;
+
+    .main-wrapper {
+      img {
+        width: 80vw;
+        height: auto;
+      }
+      .stats-wrapper {
+        width: 80vw;
+      }
+    }
+  }
+
+  @media (max-width: 375px) {
+    // padding: 0 !important;
+
+    .main-wrapper {
+      img {
+        width: 320px;
+        height: 229px;
       }
     }
   }

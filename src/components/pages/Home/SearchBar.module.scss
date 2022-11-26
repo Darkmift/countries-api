@@ -21,4 +21,17 @@
     outline: none;
     font-size: $fontSizeDesktopL;
   }
+
+  @media (max-width: 580px) {
+    justify-content: center;
+    width: 80vw;
+
+    input {
+      width: 100%;
+    }
+  }
+  @media (max-width: 450px) {
+    justify-content: center;
+    width: 343px;
+  }
 }

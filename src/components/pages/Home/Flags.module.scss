@@ -38,4 +38,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media (max-width: 450px) {
+    justify-content: center;
+
+    .flag-card {
+      margin-bottom: 40px;
+    }
+  }
 }
